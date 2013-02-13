@@ -1,60 +1,61 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>About Web &amp; TV by dcorvoysier</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+---
+layout: page
+title: Home
+tags: []
+status: publish
+type: page
+published: true
+---
+<!-- No specific header for this page -->
+<!-- List of Posts -->
+{% for post in paginator.posts %}
+<article>
+    <header>
+      <h1><a href="{{ post.url }}" rel="bookmark">{{ post.title }}</a></h1>
+      <small><span>{{ post.date | date_to_string }}</span> by {{ post.author }}</small>
+    </header>
+    <section>
+      <p>{{ post.content | split:'<!--more-->' | first }}</p>
+      <p><a href="{{ post.url }}">(more…)</a></p>
+    </section>
+    <footer>
+      <span>Categories: 
+        {% for cat in post.categories %}
+        <a href="/categories.html#{{ cat }}" rel="tag">{{ cat }}</a>
+        {% endfor %}
+      </span>
+      <span>Tags: 
+        {% for tag in post.tags %}
+        <a href="/tags.html#{{ tag }}" rel="tag">{{ tag }}</a>
+        {% endfor %}
+      </span>
+    </footer>
+</article>
+{% endfor %}
 
-  </head>
-  <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.com/dcorvoysier/dcorvoysier">View On GitHub</a></li>
-          <li class="downloads"><a href="https://github.com/dcorvoysier/dcorvoysier/zipball/master">ZIP</a></li>
-          <li class="downloads"><a href="https://github.com/dcorvoysier/dcorvoysier/tarball/master">TAR</a></li>
-          <li class="title">DOWNLOADS</li>
-        </nav>
-      </div><!-- end header -->
-
-    <div class="wrapper">
-
-      <section>
-        <div id="title">
-          <h1>About Web &amp; TV</h1>
-          <p>How do you put a square peg in a round hole ?</p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/dcorvoysier">dcorvoysier</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
-        </div>
-
-        <h3>About</h3>
-
-<p>This is the professional blog of David Corvoysier. It talks about ... well, Web &amp; TV !</p>
-      </section>
-
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-38442706-2");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
-
-  </body>
-</html>
+<!-- Pagination links -->
+<nav>
+  <ul id="pagination">
+    <li class="previous">
+    {% if paginator.previous_page %}
+        {% if paginator.previous_page == 1 %}
+        <a href="/">Previous</a>
+        {% else %}
+        <a href="/page{{paginator.previous_page}}">Previous</a>
+        {% endif %}
+    {% else %}
+        <span>First</span>
+    {% endif %}
+    </li>
+    <li class="page_number">
+      <span>Page: {{paginator.page}} of {{paginator.total_pages}}</span>
+    </li>
+    <li class="next">
+    {% if paginator.next_page %}
+      <a href="/page{{paginator.next_page}}" class="next">Next</a>
+    {% else %}
+        <span>Last</span>
+    {% endif %}
+    </li>
+  </ul>
+</nav>
