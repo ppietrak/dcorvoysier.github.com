@@ -1,0 +1,13 @@
+---
+layout: page
+title: Categories
+---
+{% for cat in site.categories %} 
+  <h2 id="{{ cat[0] }}-ref"><a name="{{ cat[0] }}">{{ cat[0] }}</a></h2>
+  <ul class="posts">
+    {% for post in cat[1] %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+
+{% endfor %}
