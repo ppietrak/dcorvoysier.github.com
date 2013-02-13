@@ -2,7 +2,7 @@ auto: true
 markdown: kramdown
 kramdown:
     parse_block_html: true;
-permalink: /dcorvoysier/:year/:month/:title
+permalink: /:year/:month/:day/:title
 paginate: 10
 exclude:
 - README.md
