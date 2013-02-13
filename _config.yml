@@ -1,3 +1,4 @@
+auto: true
 markdown: kramdown
 kramdown:
     parse_block_html: true;
