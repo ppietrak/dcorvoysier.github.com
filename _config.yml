@@ -1,0 +1,7 @@
+markdown: kramdown
+kramdown:
+    parse_block_html: true;
+permalink: /:year/:month/:title
+paginate: 10
+exclude:
+- README.md
