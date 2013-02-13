@@ -1,0 +1,13 @@
+---
+layout: page
+title: Tags
+---
+{% for tag in site.tags %} 
+  <h2 id="{{ tag[0] }}-ref"><a id="{{ tag[0] }}">{{ tag[0] }}</a></h2>
+  <ul class="posts">
+    {% for post in tag[1] %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+
+{% endfor %}
