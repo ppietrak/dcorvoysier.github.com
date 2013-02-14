@@ -347,6 +347,26 @@ dt {
     height: 32px;
     float: left;
 }
+#pagination {
+	list-style: none;
+    -moz-padding-start: 0px;
+    -webkit-padding-start: 0px;
+    height: 20px;
+}
+#pagination li {
+	float: left;
+    width: 33.3%;
+}
+#pagination .previous {
+	text-align: left;
+}
+#pagination .page_number {
+	text-align: center;
+    margin-right: auto;
+}
+#pagination .next {
+	text-align: right;
+}
 @media print, screen and (max-width: 720px) {
   #title .credits {
     display: block;
