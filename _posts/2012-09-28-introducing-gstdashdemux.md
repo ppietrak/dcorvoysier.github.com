@@ -14,7 +14,7 @@ based on [GStreamer](http://gstreamer.freedesktop.org/).
 <!--more-->
 
 [gstdashdemux](https://github.com/Orange-OpenSource/gstdashdemux) is a
-GStreamer plugin allowing the playback of MPEG-DASH streams. Is is
+GStreamer plugin allowing the playback of MPEG-DASH streams. It is
 compatible with both the legacy 0.10.x and new 1.0.x GStreamer frameworks.
 
 The dashdemux source code is available under an LGPL V2.1 license.
