@@ -2,8 +2,8 @@
 layout: post
 title: 'Introducing gstdashdemux'
 author: 'David Corvoysier'
-categories: General
-tags: Video DASH GStreamer
+categories: Video
+tags: DASH GStreamer
 published: true
 ---
 [Orange](http://www.orange.com) and [ST MicroElectronics](http://www.st.com)

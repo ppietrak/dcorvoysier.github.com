@@ -2,8 +2,8 @@
 layout: post
 title: 'Pushing dashdemux upstream'
 author: 'David Corvoysier'
-categories: General
-tags: Video DASH GStreamer
+categories: Video
+tags: DASH GStreamer
 published: true
 ---
 I have created a new [enhancement bug](https://bugzilla.gnome.org/show_bug.cgi?id=690555)
