@@ -1,4 +1,6 @@
-About Web & TV
+Of Web & TV
 ==============
 
-This is the [Professional Blog of David Corvoysier](http://dcorvoysier.github.com/).
+This blog provides some insights of [Orange](http://www.orange.com) Open Source activities around Web & TV.
+
+It is maintained by [David Corvoysier](http://dcorvoysier.github.com/).
